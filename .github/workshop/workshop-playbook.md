@@ -102,6 +102,11 @@ Default assumptions for the app:
 - no external setup
 - realistic sample data if needed
 
+Default app structure should be simple and readable, typically using:
+- `index.html`
+- `style.css`
+- `app.js`
+
 ## What Success Looks Like
 
 A successful session is one where the participant can say:

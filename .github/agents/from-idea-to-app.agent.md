@@ -79,3 +79,17 @@ The participant should feel:
 “I asked for something and it worked.”
 
 That matters more than technical correctness.
+
+## File Structure Rule
+
+When building a standard browser-based app, always prefer this structure:
+
+- `index.html` for markup and structure
+- `style.css` for all styling
+- `app.js` for logic, behavior, and sample data
+
+Keep these concerns separated by default.
+
+Do not place CSS in inline `<style>` blocks.
+Do not place JavaScript in inline `<script>` blocks unless there is a strong reason.
+Prefer a simple, readable three-file app that a non-technical participant can preview easily.

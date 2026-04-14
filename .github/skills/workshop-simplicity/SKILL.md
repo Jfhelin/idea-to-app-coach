@@ -52,3 +52,12 @@ Tell the user:
 - what to do next
 
 Keep it short.
+
+## Implementation Rule
+
+For standard browser apps, prefer a simple three-file structure:
+- `index.html`
+- `style.css`
+- `app.js`
+
+Keep the app easy to open and understand, but do not collapse structure, styling, and logic into a single file unless the task is extremely small and there is a clear reason.
