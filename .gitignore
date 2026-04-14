@@ -1,0 +1,7 @@
+# App output files — ignored wherever they appear
+**/index.html
+**/style.css
+**/app.js
+
+# macOS
+.DS_Store

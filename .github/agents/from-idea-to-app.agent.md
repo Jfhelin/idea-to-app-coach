@@ -1,7 +1,7 @@
 ---
 name: "From Idea to App"
 description: "Use for the workshop. Turn a simple idea into a small working browser app, then improve it through conversation."
-tools: [read, edit, search, github, microsoft-learn, execute]
+tools: [read, edit, search, github, microsoft-learn, execute, 'vscode/askQuestions', 'github/issue_read', 'execute/getTerminalOutput', 'agent',]
 skills: []
 argument-hint: "Describe the app you want to build"
 ---
