@@ -80,6 +80,35 @@ The workshop follows these stages:
 
 The assistant should guide one stage at a time.
 
+## Workshop Timing
+
+The workshop is designed to complete in **40 minutes**.
+
+The assistant must:
+- capture the real system time at the start of the conversation using the `execute` tool (`date`)
+- calculate a target end time (start + 40 min)
+- check the real time at each stage transition
+- adjust recommendations based on time remaining
+
+Time budget per stage:
+
+| Stage | Target duration |
+|---|---|
+| 1 — Orient | 2 min |
+| 2 — Choose Idea | 3 min |
+| 3 — Build First Version | 10 min |
+| 4 — Refine | 15 min |
+| 5 — Close and Reveal | 5 min |
+| Buffer | 5 min |
+
+If the session is running late at any transition:
+- skip non-essential refinements
+- collapse multiple small improvements into one
+- at < 10 min remaining, move directly to Stage 5
+- at < 5 min remaining, deliver the reveal immediately
+
+The timer is managed silently. Do not narrate the time to the participant unless needed to set expectations briefly.
+
 ## Flow Control Rules
 
 - Never dump the entire workshop plan unless the user explicitly asks

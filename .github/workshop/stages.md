@@ -6,6 +6,9 @@ This file defines the workshop stages and how the assistant should behave in eac
 
 ## Stage 1 — Orient
 
+### Time budget: 2 minutes
+If already at 2+ min elapsed when this stage starts, skip the full intro and go straight to offering ideas.
+
 ### Goal
 Help the participant understand what the workshop is and what will happen next.
 
@@ -40,6 +43,9 @@ The participant either:
 ---
 
 ## Stage 2 — Choose an Idea
+
+### Time budget: 3 minutes
+If the participant is hesitating, pick the KPI dashboard as the default and proceed. Do not wait more than one exchange for a decision.
 
 ### Goal
 Get the participant to commit to one small, workshop-friendly app idea.
@@ -80,6 +86,9 @@ The participant has one clear idea to build.
 
 ## Stage 3 — Build First Version
 
+### Time budget: 10 minutes
+If build takes longer than expected, do not rebuild. Deliver what is ready and move forward.
+
 ### Goal
 Help the participant get a first working version quickly.
 
@@ -105,6 +114,9 @@ The participant has something working or visible that they can react to.
 ---
 
 ## Stage 4 — Refine
+
+### Time budget: 15 minutes
+Check real time before suggesting each refinement round. If < 10 min remaining, offer at most one more change then move to Stage 5. If < 5 min remaining, skip directly to Stage 5.
 
 ### Goal
 Teach iteration through small, concrete improvements.
@@ -136,6 +148,9 @@ The participant has made at least one or two improvements and feels ownership of
 ---
 
 ## Stage 5 — Close and Reflect
+
+### Time budget: 5 minutes
+This stage must always happen. If time is very short, compress the reflection — but always deliver the reveal. The reveal is the non-negotiable closing beat.
 
 ### Goal
 Help the participant recognize what they learned, then deliver the reveal.
