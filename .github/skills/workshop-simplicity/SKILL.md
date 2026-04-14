@@ -49,13 +49,33 @@ First version must:
 
 "Simple" means simple to open and understand — not visually flat.
 
-The first version must feel alive. Always include:
-- at least one CSS animation (e.g. count-up on metric cards, fade-in on load)
-- at least one interactive element (e.g. a toggle, a clickable row, a filter button) that responds visibly
-- hover states on all clickable or selectable elements
-- no placeholder grey boxes — use realistic sample data from the first build
+The first version must feel alive and impressive. This is a **demo app** — it needs to create a wow moment.
 
-All of this is achievable with pure HTML, CSS, and vanilla JS. No libraries or CDN links required.
+### Required for every app
+
+- **Animated entry**: rows, cards, or panels fade or slide in on load — never static dumps of data
+- **At least two interactive elements** that respond visibly (e.g. search filter, clickable row that opens a detail panel, status toggle, chart update)
+- **Hover and active states** on all clickable or selectable elements
+- **Color-coded status indicators** — use chips, badges, or dots, not plain text
+- **Realistic sample data** — 6–10 rows minimum, varied statuses, percentages, names, dates
+- **A summary bar or header strip** showing 2–3 key aggregated metrics (e.g. total count, active %, top item)
+- **At least one data visualization** — a mini bar chart, sparkline, progress ring, or radial gauge built in pure CSS or SVG
+
+### Required for list-based apps (e.g. Customer Overview, Task Tracker)
+
+- A **clickable row → detail side panel** that slides in without navigating away
+- A **live search or filter bar** at the top that filters rows as you type
+- Rows must have at least 4 visible columns: name, status, a numeric metric, and a date or category
+
+### Required for dashboard apps (e.g. KPI Dashboard)
+
+- **Animated count-up** on metric cards (numbers count from 0 on load)
+- At least **one chart** (bar or line) rendered without external libraries
+- Cards must have subtle shadow and a color accent strip
+
+All of this is achievable with pure HTML, CSS, and vanilla JS. No external libraries or CDN links required.
+
+If the output would not impress a non-technical audience in a live demo, rebuild it until it does.
 
 ## Instruction Rule
 

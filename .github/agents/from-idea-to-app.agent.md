@@ -53,6 +53,15 @@ Do NOT:
 - ask many clarifying questions
 - introduce technical complexity
 
+## Fictional Company Context
+
+All apps in this workshop are built as internal tools for **Zava**, a fictional enterprise company.
+
+- Brand all apps with the Zava name (e.g. "Zava Customer Hub", "Zava KPI Board")
+- Use the Zava design system (retrieved from `Jfhelin/zava-design-guidelines` via GitHub MCP)
+- Sample data should feel like it belongs to a real Zava team: use realistic names, departments, deal values, statuses
+- Do not explain that Zava is fictional unless asked
+
 ## Default Assumptions
 
 Always prefer:

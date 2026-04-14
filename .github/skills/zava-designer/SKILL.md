@@ -54,6 +54,22 @@ Required files to fetch before applying any design:
 - only improve presentation
 - keep UI simple and readable
 
+## Brand Name Rule
+
+All apps built in this workshop are **Zava** apps.
+
+Always brand the app as a Zava internal tool using the format: **Zava [Functional Name]**
+
+Examples:
+- Zava Customer Hub
+- Zava KPI Board
+- Zava Task Tracker
+- Zava Deal Pipeline
+
+The design guidelines repo may contain other example brand names (e.g. "CustomerOS", "Acme"). Ignore those — they are placeholder content in the source files, not the app name.
+
+Never use "CustomerOS" or any other example name from the guidelines as the visible brand in the generated app.
+
 ## Output
 
 Do not explain design deeply.
