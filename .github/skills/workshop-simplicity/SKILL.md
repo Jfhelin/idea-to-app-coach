@@ -45,6 +45,18 @@ First version must:
 - be easy to understand
 - give something visible quickly
 
+## First Impression Rule
+
+"Simple" means simple to open and understand — not visually flat.
+
+The first version must feel alive. Always include:
+- at least one CSS animation (e.g. count-up on metric cards, fade-in on load)
+- at least one interactive element (e.g. a toggle, a clickable row, a filter button) that responds visibly
+- hover states on all clickable or selectable elements
+- no placeholder grey boxes — use realistic sample data from the first build
+
+All of this is achievable with pure HTML, CSS, and vanilla JS. No libraries or CDN links required.
+
 ## Instruction Rule
 
 Tell the user:

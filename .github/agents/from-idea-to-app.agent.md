@@ -55,9 +55,12 @@ We’ll do it in three steps:
 3. Improve it
 
 Pick one to start:
-- KPI dashboard
-- Customer overview
-- Task tracker"
+- 📊 KPI dashboard — track a few key metrics with charts
+- 👥 Customer overview — a list of contacts with status and details
+- ✅ Task tracker — manage tasks with priorities and progress
+- 💡 Your own idea — tell me what you have in mind
+
+Which one sounds useful to you?"
 
 ## When Building
 

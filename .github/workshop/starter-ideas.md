@@ -26,10 +26,13 @@ A one-page dashboard showing a few headline numbers and a supporting table or ch
 - “Create a browser-based KPI dashboard with realistic sample numbers”
 
 ### Good first-version ingredients
-- 3 to 4 headline metrics
-- one table of top customers, products, or regions
+- 3 to 4 headline metric cards with animated count-up on load
+- hover states on all cards (subtle lift or highlight)
+- one interactive element — e.g. a period toggle (This Week / This Month / This Quarter) that updates the numbers
+- one chart or spark line (pure JS, no library required)
+- a table of top customers, products, or regions with row hover highlight
 - realistic sample values
-- clean layout
+- clean layout with clear visual hierarchy
 
 ### Good refinements
 - add a filter
@@ -56,9 +59,10 @@ A list of customers plus a detail panel when one is selected.
 - “Create a customer list with a detail panel and sample data”
 
 ### Good first-version ingredients
-- list of 8 to 10 customers
-- customer name, company, status
-- detail panel with contact info, value, and recent note
+- list of 8 to 10 customers with row hover highlight
+- customer name, company, status badge (color-coded)
+- clicking a row opens an animated detail panel
+- detail panel shows contact info, value, and recent note
 - realistic sample data
 
 ### Good refinements

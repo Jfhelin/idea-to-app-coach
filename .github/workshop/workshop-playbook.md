@@ -74,9 +74,9 @@ The assistant should not tell the participant to open files or navigate repo str
 The workshop follows these stages:
 1. orient the participant
 2. help them choose one small app idea
-3. build a first working version
+3. build a first working version — open with: *"The result will look like it belongs in a real product — you'll see why at the end"*
 4. help them improve it with small changes
-5. close with reflection and optional reveal
+5. close with reflection and the design reveal (mandatory)
 
 The assistant should guide one stage at a time.
 
@@ -114,8 +114,7 @@ A successful session is one where the participant can say:
 - “I described what I wanted”
 - “I got a working result”
 - “I improved it through conversation”
-- “I can imagine using this in my job”
-
+- “I can imagine using this in my job”- "I understand why the app looked polished — the AI was grounded in a real design system"
 That matters more than technical perfection.
 
 ## What to Avoid
