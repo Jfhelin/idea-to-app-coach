@@ -29,7 +29,7 @@ They should choose one of:
 - AI Transformation Control Center
 - Executive Relationship & Strategy Map
 
-Spec Coach should create `app-spec.md`.
+Spec Coach should finish with a clear final spec summary in the conversation.
 
 Facilitator should demo on screen slowly enough that stuck participants can follow.
 
@@ -49,14 +49,15 @@ Keep it high-level.
 
 ## Segment 4 - Build Phase
 
-Ask participants to switch to Build Coach.
+After the learning break, ask participants to switch to Build Coach.
 
 Build Coach should:
-- read `app-spec.md`
+- read the final spec summary from the previous conversation
 - use GitHub MCP for `Jfhelin/account-strategy-sample-data`
 - use GitHub MCP for `Jfhelin/zava-design-guidelines`
 - create `index.html`, `style.css`, and `app.js`
-- tell participants to preview with the Preview App task or `bash scripts/preview.sh`
+- tell participants to preview by opening `index.html` directly
+- use the Preview App (Fallback) task or `bash scripts/preview.sh` only as a fallback
 
 Leave time for at least one improvement.
 

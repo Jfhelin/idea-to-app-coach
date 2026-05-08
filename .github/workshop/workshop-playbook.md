@@ -44,22 +44,22 @@ Apps should include filters, clickable views, scoring, maps, prioritization, dyn
 Used only in Segment 2.
 - Helps the participant choose or refine one of the three app ideas.
 - Keeps scope small and the participant on time.
-- Creates or updates `app-spec.md`.
+- Produces a clear final spec summary in the conversation.
 - Does not implement code.
-- Ensures the spec identifies app idea, target user, supported decision/workflow, interactive features, required sample-data scenario, constraints, non-goals, and why it is an app rather than a static report.
-- Ends by telling the participant to switch to the Build Coach.
+- Ensures the spec identifies app idea, target user, supported decision/workflow, interactive features, required sample-data scenario, participant-facing scope boundaries, non-goals, and why it is an app rather than a static report.
+- Ends by telling the participant to pause and wait for the workshop leader. Participants switch to Build Coach only after the facilitator-led learning break.
 
 ### Build Coach
 
 Used only in Segment 4.
-- Reads `app-spec.md` and the conversation context.
+- Reads the final spec summary from the previous conversation context.
 - Implements the app from the spec.
-- Uses GitHub MCP to retrieve relevant sample data from `Jfhelin/account-strategy-sample-data`.
-- Uses GitHub MCP and the Zava design skill to retrieve and apply design guidance from `Jfhelin/zava-design-guidelines`.
+- Prefers GitHub MCP to retrieve relevant sample data from `Jfhelin/account-strategy-sample-data`, with public repo/web access as fallback.
+- Prefers GitHub MCP and the Zava design skill to retrieve and apply design guidance from `Jfhelin/zava-design-guidelines`, with public repo/web access as fallback.
 - Uses Microsoft Learn MCP only when implementation guidance is useful.
 - Creates `index.html`, `style.css`, and `app.js`.
 - Keeps the app small, interactive, browser-based, and demoable.
-- Explains how to preview the app with `bash scripts/preview.sh` or the "Preview App" task.
+- Explains how to preview the app by opening `index.html` directly, with `bash scripts/preview.sh` or the "Preview App (Fallback)" task as optional fallbacks.
 - Does not introduce backend, auth, database, API keys, or cloud deployment.
 
 ## Concept Reveal Timing
@@ -76,6 +76,7 @@ Do not expose agents, skills, MCP, prompts, or context too early in participant-
 
 Generated apps must:
 - run locally in the browser
+- open directly from `index.html` without a local server
 - use `index.html`, `style.css`, and `app.js`
 - avoid backend, auth, databases, API keys, and cloud deployment
 - use realistic sample data

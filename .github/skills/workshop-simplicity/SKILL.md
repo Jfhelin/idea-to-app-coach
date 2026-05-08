@@ -15,6 +15,7 @@ Keep the experience simple for non-developers while still producing an app-like 
 
 Generated apps must:
 - run locally in the browser
+- open directly from `index.html` without requiring a local server
 - use exactly three app files: `index.html`, `style.css`, `app.js`
 - avoid backend services
 - avoid authentication
@@ -48,7 +49,7 @@ If the request becomes too broad:
 
 ## Data Rule
 
-Use realistic account strategy sample data. For Build Coach work, the authoritative source is `Jfhelin/account-strategy-sample-data` retrieved through GitHub MCP.
+Use realistic account strategy sample data. For Build Coach work, prefer `Jfhelin/account-strategy-sample-data` through GitHub MCP. If MCP is unavailable, use the public GitHub repository directly through public repo/web access.
 
 Do not use Lorem ipsum, "Item 1", generic placeholder rows, or invented labels when grounded sample data should be used.
 
@@ -62,6 +63,8 @@ Keep concerns separate:
 - `app.js` for data and behavior
 
 Do not add build tooling, package managers, external libraries, CDNs, backend code, or deployment files for the workshop app.
+
+Put sample data directly in `app.js`. Do not rely on `fetch()` for local JSON files, ES module imports, or browser features that require a local HTTP server.
 
 ## First Version Rule
 

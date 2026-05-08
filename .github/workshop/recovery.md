@@ -69,7 +69,7 @@ Preferred response:
 
 ## Build Coach Recovery
 
-### `app-spec.md` is missing
+### The final spec summary is missing
 
 Response pattern:
 - do not send the participant back through the full spec flow
@@ -77,26 +77,28 @@ Response pattern:
 - infer a compact spec and proceed
 
 Preferred response:
-"I don't see `app-spec.md`. That's fine. In one or two sentences, tell me which app idea you chose and who it is for; I'll take it from there."
+"I don't see the final spec summary. That's fine. In one or two sentences, tell me which app idea you chose and who it is for; I'll take it from there."
 
 ### GitHub MCP grounding is unavailable
 
 Response pattern:
-- stop before generating grounded sample data or design
-- tell the participant briefly
-- suggest following the facilitator screen if needed
+- do not stop immediately
+- use the public GitHub repositories as the fallback source
+- retrieve the needed files through public repo/web access
+- only stop if both MCP and public repo access are unavailable
+- do not invent sample data or design guidance
 
 Preferred response:
-"I need GitHub MCP for the workshop sample data and design grounding. I can't retrieve those sources right now, so pause here and follow the facilitator's screen while this is resolved."
+"GitHub MCP is not available, so I'll use the public workshop repositories directly instead. I'll only pause if I cannot access the sample data or design guidance at all."
 
 ### App does not open
 
 Response pattern:
-- give one simple path
-- prefer the preview task/script
+- give one simple direct-open path first
+- use the preview task/script only as fallback
 
 Preferred response:
-"Run the `Preview App` task, or run `bash scripts/preview.sh` in the repo. It will print the local URL to open."
+"Open `index.html` directly in your browser. If that does not work, run the `Preview App (Fallback)` task or `bash scripts/preview.sh` and open the URL it prints."
 
 ### First result is not what the participant expected
 

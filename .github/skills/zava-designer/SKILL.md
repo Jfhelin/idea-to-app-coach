@@ -7,13 +7,13 @@ description: "Apply automatically to UI/design work. Use Zava design guidance fr
 
 Use this skill for all UI and visual design work in the workshop.
 
-## Source Authority
+## Source Priority
 
-GitHub MCP is the authoritative source for Zava design guidance.
+GitHub MCP is the preferred source for Zava design guidance.
 
-Always retrieve relevant files from `Jfhelin/zava-design-guidelines` through GitHub MCP before applying design. Do not use generic GitHub API access, web browsing, memory, or guessed styles as a substitute.
+Retrieve relevant files from `Jfhelin/zava-design-guidelines` through GitHub MCP when available. If GitHub MCP is unavailable, use the public GitHub repository directly through public repo/web access.
 
-If GitHub MCP is unavailable, stop and explain briefly rather than inventing the design system.
+Do not use memory or guessed styles as a substitute. Only stop if neither GitHub MCP nor public repo/web access can retrieve the design guidance.
 
 ## Required Retrieval
 

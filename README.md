@@ -7,16 +7,19 @@ Participants should not use this README as the workshop script. The facilitator 
 ## Participant Flow
 
 1. Open **Spec Coach** first.
-2. Create the lightweight spec in `app-spec.md`.
-3. Switch to **Build Coach**.
-4. Build and improve the app from the spec.
+2. Create the lightweight spec through conversation.
+3. Pause for the facilitator-led learning break.
+4. Switch to **Build Coach** only when the workshop leader says to continue.
+5. Build and improve the app from the final spec summary in the conversation.
 
 The generated app uses:
 - `index.html`
 - `style.css`
 - `app.js`
 
-To preview the app after it exists, run the **Preview App** task or:
+To preview the app after it exists, open `index.html` directly in your browser.
+
+If direct opening does not work, run the optional **Preview App (Fallback)** task or:
 
 ```bash
 bash scripts/preview.sh

@@ -14,7 +14,7 @@ The participant learning pattern is **Describe -> Review -> Improve**.
 
 ## Phase A - Spec Phase (Spec Coach)
 
-The Spec Coach creates `app-spec.md`. It does not implement code.
+The Spec Coach creates a final spec summary in the conversation. It does not implement code or write a spec file.
 
 ### Stage A1 - Orient
 
@@ -60,7 +60,7 @@ The spec must identify:
 - decision or workflow the app supports
 - interactive features
 - required sample-data scenario
-- constraints
+- participant-facing scope boundaries
 - non-goals
 - what makes it an app instead of a static report
 
@@ -70,43 +70,45 @@ The assistant should:
 - make sensible assumptions when the participant is unsure
 - show a running draft when useful
 - keep scope small enough for a 15-minute build
-- save or update `app-spec.md`
+- produce a final spec summary in the conversation
 
 The assistant should not:
 - write implementation files
+- create or update a spec file
 - discuss code details
 - expand the scope beyond a small static browser app
 
-### Stage A4 - Hand Off
+### Stage A4 - Pause Before Hand-off
 
-Goal: complete the phase and switch agents.
+Goal: complete the spec phase and hold participants for the facilitator-led learning break.
 
 The assistant should:
-- ensure `app-spec.md` is saved
+- ensure the final spec summary is visible in the conversation
 - summarize the spec briefly
-- say: "Your spec is ready. Now switch to the Build Coach to build it."
+- say: "Your spec is ready. Pause here and wait for the workshop leader. After the learning break, they will tell you when to switch to Build Coach."
 - stop and wait
 
 The assistant should not:
 - begin implementation
+- tell participants to switch immediately to Build Coach
 - explain how the Build Coach works internally
 - reveal agents, skills, MCP, prompts, or context
 
 ## Phase B - Implementation Phase (Build Coach)
 
-The Build Coach implements the app from `app-spec.md`.
+The Build Coach implements the app from the final spec summary in the previous conversation.
 
 ### Stage B1 - Accept the Spec
 
 Goal: find the handoff and confirm before building.
 
 The assistant should:
-- read `app-spec.md` first
-- use conversation history only as backup context
+- scan the previous conversation for `## Final Spec Summary`
+- use the conversation as the handoff source
 - summarize the app in 2 sentences
 - ask for confirmation to proceed
 
-If `app-spec.md` is missing, ask for a one- or two-sentence description and proceed with a compact inferred spec.
+If the final spec summary is missing, ask for a one- or two-sentence reminder and proceed with a compact inferred spec.
 
 The assistant should not:
 - ask the participant to paste the spec
@@ -118,8 +120,9 @@ The assistant should not:
 Goal: produce a working first version quickly.
 
 Before writing UI code, the assistant must:
-- use GitHub MCP to retrieve relevant sample data from `Jfhelin/account-strategy-sample-data`
-- use GitHub MCP as the authoritative source for design guidance from `Jfhelin/zava-design-guidelines`
+- prefer GitHub MCP to retrieve relevant sample data from `Jfhelin/account-strategy-sample-data`
+- prefer GitHub MCP for design guidance from `Jfhelin/zava-design-guidelines`
+- use the public GitHub repositories directly through public repo/web access if GitHub MCP is unavailable
 - use the Zava design skill for layout, visual hierarchy, spacing, and enterprise-ready UI
 - use Microsoft Learn MCP only when useful for implementation guidance
 
@@ -130,18 +133,21 @@ The assistant should create:
 
 The app must:
 - run locally in the browser
+- open directly from `index.html` without requiring a local server
 - be small, interactive, and demoable
 - include realistic sample data
 - include filters, clickable views, scoring, maps, prioritization, dynamic recommendations, or similar interactivity
 - avoid backend, auth, databases, API keys, and cloud deployment
 
-After building, tell the participant to preview with:
-- the "Preview App" task, or
+After building, tell the participant to open `index.html` directly in the browser.
+
+If direct opening does not work, suggest the optional fallback:
+- the "Preview App (Fallback)" task, or
 - `bash scripts/preview.sh`
 
 The assistant should not:
 - generate a single-file app
-- use generic GitHub API access instead of GitHub MCP for sample data or design grounding
+- invent sample data or design guidance when neither MCP nor public repo/web access is available
 - build a static report or briefing
 
 ### Stage B3 - Review and Improve
