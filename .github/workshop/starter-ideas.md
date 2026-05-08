@@ -1,134 +1,88 @@
 # Starter Ideas
 
-These are the default app ideas for the workshop.
+These are the three supported app ideas for the workshop. They are business-facing, interactive, and grounded in account strategy work. Prefer these whenever a participant asks for suggestions or proposes something too broad.
 
-The assistant should prefer these ideas when:
-- the participant does not know what to build
-- the participant asks for suggestions
-- the participant suggests something too large and needs a safer alternative
+Only offer these three ideas. Do not offer generic dashboards, task trackers, games, or static reports.
 
-Only offer up to 3 ideas at once unless the participant explicitly asks for more.
-
-## Idea 1 — KPI Dashboard
-
-### Why it works well
-- familiar business use case
-- easy to explain
-- visually satisfying
-- can be built quickly
-- easy to refine with filters, labels, layout, and summaries
+## Idea 1 - Account Opportunity Navigator
 
 ### Core concept
-A one-page dashboard showing a few headline numbers and a supporting table or chart.
-
-### Canonical starter phrasing
-- “Build me a simple KPI dashboard for a sales team”
-- “Create a browser-based KPI dashboard with realistic sample numbers”
-
-### Good first-version ingredients
-- 3 to 4 headline metric cards with animated count-up on load
-- hover states on all cards (subtle lift or highlight)
-- one interactive element — e.g. a period toggle (This Week / This Month / This Quarter) that updates the numbers
-- one chart or spark line (pure JS, no library required)
-- a table of top customers, products, or regions with row hover highlight
-- realistic sample values
-- clean layout with clear visual hierarchy
-
-### Good refinements
-- add a filter
-- improve titles
-- add a summary line
-- improve layout
-- add trend indicators
-
----
-
-## Idea 2 — Customer Overview
-
-### Why it works well
-- feels useful and concrete
-- combines list + detail view
-- easy to understand for non-developers
-- good for showing iteration
-
-### Core concept
-A list of customers plus a detail panel when one is selected.
-
-### Canonical starter phrasing
-- “Build me a customer overview tool”
-- “Create a customer list with a detail panel and sample data”
-
-### Good first-version ingredients
-- list of 8 to 10 customers with row hover highlight
-- customer name, company, status badge (color-coded)
-- clicking a row opens an animated detail panel
-- detail panel shows contact info, value, and recent note
-- realistic sample data
-
-### Good refinements
-- add search
-- add status filter
-- improve labels
-- add last activity date
-- improve spacing and clarity
-
----
-
-## Idea 3 — Task Tracker
-
-### Why it works well
-- simple mental model
-- visually obvious
-- easy to personalize
-- easy to refine
-
-### Core concept
-A board or list showing tasks grouped by status.
-
-### Canonical starter phrasing
-- “Build me a simple task tracker”
-- “Create a browser-based task board with sample tasks”
-
-### Good first-version ingredients
-- three statuses
-- task title
-- owner
-- priority
-- 10 to 12 sample tasks
-
-### Good refinements
-- add filtering
-- add search
-- improve labels
-- change layout
-- highlight priority more clearly
-
----
-
-## Optional Idea 4 — Tetris or Simple Game
-
-Only offer this if:
-- the participant explicitly wants something playful
-- the participant asks for a game
+An interactive exploration tool for customer signals, business priorities, Microsoft solution plays, opportunity areas, urgency, impact, and suggested next actions.
 
 ### Why it works
-- fun
-- visually engaging
-- memorable
+- familiar to customer-facing Microsoft roles
+- uses realistic account strategy sample data
+- naturally supports filtering, scoring, prioritization, and next-action guidance
+- creates an app-like experience that is more useful than a static briefing
 
-### Why to use carefully
-- can distract from the business value of the workshop
-- can increase implementation risk
+### First-version ingredients
+- searchable or filterable list of customer signals
+- clickable opportunity detail panel
+- urgency and impact scoring
+- Microsoft solution play alignment
+- recommended next actions based on selected filters or priorities
+- 6-10 realistic records from `Jfhelin/account-strategy-sample-data`
 
-### Rule
-If using this idea, keep it small and strongly guided.
+### Good refinements
+- add urgency/impact filters
+- add a solution-play selector
+- improve opportunity scoring explanation
+- add a prioritized next-actions view
 
----
+## Idea 2 - AI Transformation Control Center
+
+### Core concept
+An interactive simulator/dashboard for cloud maturity, AI maturity, data readiness, business pressures, and recommended transformation initiatives.
+
+### Why it works
+- lets participants adjust inputs and see recommendations change
+- shows AI transformation as a decision workflow, not a report
+- supports sliders, maturity scoring, initiative prioritization, and dynamic recommendations
+
+### First-version ingredients
+- maturity controls for cloud, AI, and data readiness
+- business pressure filters or toggles
+- dynamic readiness score
+- recommended transformation initiatives
+- priority ranking by value, effort, or urgency
+- realistic scenario data from `Jfhelin/account-strategy-sample-data`
+
+### Good refinements
+- add sliders for maturity inputs
+- add initiative comparison
+- add risk or blocker indicators
+- improve recommendation wording
+
+## Idea 3 - Executive Relationship & Strategy Map
+
+### Core concept
+An interactive map of stakeholders, influence, priorities, concerns, relationships, and opportunity alignment.
+
+### Why it works
+- visual and memorable in a live workshop
+- useful for account planning and executive conversations
+- supports clickable stakeholder nodes, filters, influence scoring, and relationship views
+
+### First-version ingredients
+- stakeholder map or matrix
+- clickable stakeholder detail panel
+- influence, sentiment, and priority indicators
+- relationship or alignment lines/groups
+- opportunity alignment by stakeholder
+- realistic stakeholder data from `Jfhelin/account-strategy-sample-data`
+
+### Good refinements
+- add influence/priority filters
+- add opportunity alignment view
+- add concern or blocker tags
+- improve map layout and hierarchy
 
 ## Guidance Rule
 
-If a participant asks for an idea outside these defaults:
-- accept it if it is small, local, and easy to demo
-- otherwise simplify it into one of the workshop-safe patterns above
+If a participant suggests another idea:
+- accept the business intent
+- simplify it into one of the three supported ideas where possible
+- keep it local, browser-based, and demoable
+- preserve interactivity through filters, clickable views, scoring, maps, prioritization, or dynamic recommendations
 
-The assistant should prioritize quick success over novelty.
+Never position the output as a static briefing, report, Word document, or PowerPoint replacement. The value is an interactive app-like experience.

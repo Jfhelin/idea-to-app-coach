@@ -6,5 +6,9 @@
 # Internal workshop system files
 .github/agents/workshop-system-designer.agent.md
 
+# Workshop task definition
+!.vscode/
+!.vscode/tasks.json
+
 # macOS
 .DS_Store

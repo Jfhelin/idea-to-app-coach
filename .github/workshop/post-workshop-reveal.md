@@ -1,117 +1,66 @@
 # Post Workshop Reveal
 
-This file defines how the assistant should explain what happened behind the scenes — but ONLY after the participant has completed the workshop.
+This file defines when and how to reveal the concepts behind the workshop. Concepts should be revealed after participants have experienced the guided flow, not before.
 
----
+## Beat 1 - Facilitator During the Learning Break
 
-## When to Trigger
+### Timing
 
-Only reveal this information when:
+Segment 3, after the Spec Coach phase and before the Build Coach phase.
 
-- the participant has built and refined an app
-- the participant asks:
-  - “What just happened?”
-  - “How does this work?”
-  - “What is behind this?”
-- OR the assistant is clearly in the closing stage
+### Goal
 
-Do NOT reveal this during the main workshop flow.
+Connect the participant experience to agents, skills, prompts, context, MCP, and grounding at a high level.
 
----
+### Talk Track
 
-## Goal of the Reveal
+Start from experience:
+"You just spent ten minutes describing what you want. The conversation had a shape: it kept you focused, limited scope, and produced a spec. That was intentional."
 
-The goal is NOT to teach technical architecture.
+Agents:
+"An agent is a set of instructions that shapes how an AI assistant behaves. The Spec Coach was instructed to help you describe, not build. The Build Coach has a different job: implement the app from the spec."
 
-The goal is to:
+Prompts:
+"The behavior you saw comes from prompts and instructions. They set boundaries, define the flow, and help the assistant know what to avoid."
 
-- reinforce that the experience was guided
-- show that this can scale beyond a demo
-- connect the experience to real-world usage
+Context:
+"The things you said become context. The Build Coach can use the spec and the conversation so you do not have to start from scratch."
 
----
+Skills:
+"Skills are reusable patterns that can apply to a task. In this workshop, one skill keeps apps simple and local, and another applies the Zava design guidance."
 
-## Reveal Structure
+MCP and grounding:
+"MCP is how the assistant connects to trusted sources. For this workshop, GitHub MCP gives access to sample data and design guidance. That means the assistant is grounded in specific sources instead of guessing."
 
-The explanation should follow this structure:
+Key takeaway:
+"You did not need to configure those pieces during the exercise. You described what you wanted, reviewed the output, and improved it."
 
-### 1. Start from the participant experience
+## Beat 2 - Build Coach at Close
 
-"You started with an idea, described it in plain language, and ended up with a working app."
+### Timing
 
----
+After the participant has built and refined the app.
 
-### 2. Reinforce the key skill
+### Required Build Coach Line
 
-"The important part is not the app — it’s how you guided the system."
+> "Notice the app looks on-brand? That wasn't a coincidence - the AI was given a design system to work from. Your facilitator will explain how that works in the wrap-up."
 
----
+This is reinforcement only. The Build Coach should not explain agents, skills, prompts, context, MCP, or grounding in detail.
 
-### 3. Introduce the idea of guidance
+## If Participants Ask for More
 
-"What you experienced was not just a raw AI response. It was guided."
+Use short answers:
+- "Agents are instruction sets that guide how an AI behaves."
+- "Skills are reusable patterns that apply to the task."
+- "Context is what the assistant can use from the current conversation and files."
+- "MCP lets the assistant connect to external tools and trusted sources."
+- "Grounding means the assistant used a real source rather than guessing."
 
----
-
-### 4. Explain the three concepts (simple)
-
-Keep each explanation to one sentence.
-
-#### Agents
-"Agents help shape how the assistant behaves and what steps it follows."
-
-#### Skills
-"Skills apply reusable patterns automatically — for example design or simplification."
-
-#### Grounding (MCP)
-"Grounding connects the assistant to trusted sources like design guidance or documentation."
-
----
-
-### 5. Connect to real-world use
-
-"This is how we move from a simple demo to something usable in real scenarios — by guiding behavior, applying patterns, and grounding in real data."
-
----
-
-## What NOT to Do
-
-Do NOT:
-
-- explain file structure
-- explain .agent.md files
-- explain MCP protocol details
-- mention APIs or endpoints
-- go into technical architecture
-- overwhelm the user with detail
-
----
-
-## If the User Wants More
-
-If the user asks deeper questions:
-
-- answer progressively
-- do not jump to full technical detail immediately
-- offer to go deeper instead of forcing it
-
-Example:
-
-"I can go deeper into how that works if you want."
-
----
+Then return to the workshop flow or Q&A.
 
 ## Tone
 
-- simple
-- confident
-- non-technical
-- focused on value
-
----
-
-## Key Message
-
-The participant should leave with:
-
-"I don’t just use AI — I can guide it."
+- practical
+- brief
+- tied to what participants just experienced
+- not a technical lecture

@@ -1,85 +1,87 @@
 # Workshop Positioning
 
-This file defines what the workshop is really teaching.
-
-The assistant should use this positioning implicitly throughout the experience.
+This file defines what the workshop is teaching.
 
 ## Core Message
 
-This workshop is not mainly about building an app.
+This workshop is not mainly about coding.
 
-The app is the vehicle.
+The app is the vehicle. The real lesson is how to collaborate with AI:
+- describe the outcome clearly
+- review what comes back
+- improve it through focused feedback
 
-The real lesson is:
-- how to turn an idea into something tangible using AI
-- how to guide AI through iteration
-- how to evaluate and improve results
-- how to gain confidence working with AI in a practical context
+The pattern is:
 
-## What the participant should leave with
+**Describe -> Review -> Improve**
 
-The participant should feel:
+## What Participants Should Leave With
 
-- “I can use AI to make ideas real”
-- “I do not need to code to get value”
-- “The first result is only the start”
-- “I can improve outcomes by giving better guidance”
+Participants should feel:
+- "I can use AI to make ideas tangible."
+- "I do not need to code to get value."
+- "The first result is something to review, not the final answer."
+- "I can improve outcomes by giving better guidance."
+- "Interactive apps can support decisions in ways static documents cannot."
 
-## What the workshop is not
+## What This Workshop Is Not
 
 It is not:
 - a software engineering class
 - a GitHub internals class
-- an introduction to prompt files
+- a repo navigation exercise
+- a prompt-file tutorial
 - a deep dive on skills
 - a technical explanation of MCP
 - a production app-building course
+- a static report or briefing generator
 
-## What to emphasize
+## Why Interactive Apps Matter
+
+The workshop must not be positioned as "generate a static briefing/report."
+
+Participants are building small app-like experiences with filters, clickable views, scoring, maps, prioritization, or dynamic recommendations. That distinction matters because the value is a decision workflow someone can explore, not content that could be replaced by a Word document or PowerPoint deck.
+
+## What to Emphasize
 
 Emphasize:
 - practical outcomes
 - confidence
-- interaction quality
 - iteration
 - clarity of instruction
-- speed from idea to result
+- app-like interactivity
+- grounded sample data and design after participants have experienced the flow
 
-## What to de-emphasize
+## What to De-emphasize
 
 De-emphasize:
 - code details
 - repo structure
-- tool architecture
 - model comparisons
 - internal orchestration
+- tool architecture before the learning break
 
 ## Internal Concepts
 
-The following concepts may exist behind the scenes:
+The following concepts exist behind the scenes:
 - agents
 - skills
+- prompts
+- context
 - MCP grounding
-- structured prompts
 - design guidance
 - sample-data retrieval
 
-These concepts should not be taught during the hands-on flow unless the user explicitly asks.
+Do not teach these during the initial intro or the Spec Coach phase. Reveal them after participants have experienced the spec phase, during the group learning break.
 
-They may be revealed briefly at the end to explain that the experience was guided and grounded.
+## Recommended Reveal Framing
 
-## Recommended reveal framing
+Keep the reveal high-level:
+- agents shape behavior
+- prompts define boundaries
+- context carries what the participant said
+- skills apply reusable patterns
+- MCP connects the assistant to trusted sources
+- grounding makes outputs more consistent and trustworthy
 
-If revealing the behind-the-scenes concepts after the workshop, frame them like this:
-
-- agents help shape behavior
-- skills apply reusable patterns automatically
-- grounded sources help the assistant use trusted data and guidance
-
-Keep the explanation high-level and short unless the participant wants a deeper follow-up.
-
-## Success Definition
-
-The workshop succeeds when the participant learns a repeatable interaction pattern they can use again:
-
-**Describe → Review → Improve**
+Return quickly to the practical lesson: participants can guide AI by describing, reviewing, and improving.

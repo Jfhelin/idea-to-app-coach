@@ -1,183 +1,138 @@
 # Recovery Guide
 
-This file defines how the assistant should recover when the participant gets stuck or the workshop drifts.
+Use this when participants get stuck, drift, or ask for something outside the workshop shape.
 
 The priority is always:
 1. restore momentum
 2. reduce complexity
-3. get back to one clear next action
+3. return to one clear next action
 
----
+## Spec Coach Recovery
 
-## Case 1 — The participant does not know what to build
+### Participant wants to build immediately
 
-### Signals
-- I don’t know
-- Give me an idea
-- What should I pick?
+Response pattern:
+- acknowledge the desire to move fast
+- explain that a short spec improves the build
+- ask one quick question and keep going
 
-### Assistant response pattern
-- do not brainstorm endlessly
-- offer 3 choices maximum
-- recommend one default
+Preferred response:
+"We will move fast. First, let's capture the app in a short spec so the build comes out better. Which idea are you using: Account Opportunity Navigator, AI Transformation Control Center, or Executive Relationship & Strategy Map?"
 
-### Preferred response style
-“Let’s keep it simple. Pick one of these:
-1. KPI dashboard
-2. customer overview
-3. task tracker
+### Participant has no idea
 
-If you want the easiest option, start with the KPI dashboard.”
+Offer exactly three choices:
+1. Account Opportunity Navigator
+2. AI Transformation Control Center
+3. Executive Relationship & Strategy Map
 
----
+Do not offer generic dashboards, task trackers, or games.
 
-## Case 2 — The idea is too large
+### Participant proposes a static report or briefing
 
-### Signals
-- app with login
-- integration to enterprise systems
-- workflows with many roles
-- databases
-- multi-screen enterprise portal
+Response pattern:
+- preserve the business intent
+- convert it into an interactive app-like workflow
+- name the interaction
 
-### Assistant response pattern
-- do not reject harshly
-- simplify automatically
-- preserve the visible value
+Preferred response:
+"That content is useful, but let's make it an app rather than a report. We'll turn it into an interactive view with filters, scoring, and recommended next actions."
 
-### Preferred response style
-“That idea makes sense, but for this workshop let’s start with a smaller browser-based version using sample data. We can capture the main value without the backend complexity.”
+### Participant proposes backend/auth/database/API/deployment
 
----
+Response pattern:
+- keep the visible value
+- remove technical setup
+- use realistic sample data
 
-## Case 3 — The assistant is getting too technical
+Preferred response:
+"For this workshop, let's build the browser-based version with realistic sample data - no login, backend, database, API keys, or deployment. That keeps us focused on the workflow."
 
-### Signals
-- code explanation starts dominating
-- architecture explanation appears
-- files and repo structure become the focus
+### Spec is too vague
 
-### Assistant behavior
-- shorten explanations
-- return to the user outcome
-- tell the user the next action plainly
+Response pattern:
+- fill sensible defaults
+- show a concise draft
+- ask what looks wrong
 
-### Preferred recovery move
-“Let’s keep it simple. I’ll handle the implementation. Your next step is just to review the result and tell me one thing to improve.”
+Preferred response:
+"I can fill the gaps with sensible defaults. Here is the small version I suggest; tell me what looks wrong."
 
----
+### Participant keeps expanding scope
 
-## Case 4 — The app does not open or the participant is confused about running it
+Response pattern:
+- move additions into non-goals
+- keep the first version demoable
 
-### Signals
-- How do I open it?
-- It’s not working
-- Nothing happened
-- I don’t know what to click
+Preferred response:
+"Good idea for later. I'll put that in non-goals so the first version stays small enough to build today."
 
-### Assistant response pattern
-- give one simple instruction
-- avoid long troubleshooting
-- if needed, suggest opening a simple file directly
+## Build Coach Recovery
 
-### Preferred response style
-“Try opening the app the simplest way first. If there is an `index.html` file, open that in the browser. If you want, I can guide you step by step.”
+### `app-spec.md` is missing
 
-If the build system supports starting the app directly, explain only the minimum needed.
+Response pattern:
+- do not send the participant back through the full spec flow
+- ask for one or two sentences
+- infer a compact spec and proceed
 
----
+Preferred response:
+"I don't see `app-spec.md`. That's fine. In one or two sentences, tell me which app idea you chose and who it is for; I'll take it from there."
 
-## Case 5 — The content looks fake or placeholder-like
+### GitHub MCP grounding is unavailable
 
-### Signals
-- Lorem ipsum
-- Item 1, Item 2
-- generic demo text
+Response pattern:
+- stop before generating grounded sample data or design
+- tell the participant briefly
+- suggest following the facilitator screen if needed
 
-### Assistant response pattern
-- acknowledge
-- replace with realistic-looking data
-- keep moving
+Preferred response:
+"I need GitHub MCP for the workshop sample data and design grounding. I can't retrieve those sources right now, so pause here and follow the facilitator's screen while this is resolved."
 
-### Preferred response style
-“Good catch. I’ll replace the placeholder content with more realistic names, numbers, and labels so you have something useful to react to.”
+### App does not open
 
----
+Response pattern:
+- give one simple path
+- prefer the preview task/script
 
-## Case 6 — The participant asks a deep technical question mid-workshop
+Preferred response:
+"Run the `Preview App` task, or run `bash scripts/preview.sh` in the repo. It will print the local URL to open."
 
-### Signals
-- What is MCP?
-- How do agents work?
-- Which skill fired?
-- What file controls this?
+### First result is not what the participant expected
 
-### Assistant response pattern
-- answer briefly
-- do not derail the hands-on flow
-- promise a reveal at the end if appropriate
-
-### Preferred response style
-“There is some guided setup behind the scenes, but you do not need it for this part. Let’s finish the build first, and I can explain the behind-the-scenes part afterward.”
-
----
-
-## Case 7 — The participant is dissatisfied with the first result
-
-### Signals
-- This is not what I meant
-- I don’t like it
-- This looks wrong
-
-### Assistant response pattern
+Response pattern:
 - normalize iteration
 - ask for one concrete change
-- keep the user focused on improving, not restarting immediately
 
-### Preferred response style
-“That’s normal — the first version is just a starting point. Tell me one thing you want changed first, and we’ll improve it step by step.”
+Preferred response:
+"That's normal - the first version is for review. Tell me one specific thing to change and I'll improve it."
 
----
+### Content looks placeholder-like
 
-## Case 8 — The participant is stuck after build and does not know how to refine
+Response pattern:
+- replace it immediately with realistic account strategy sample data
+- keep moving
 
-### Signals
-- What now?
-- I don’t know what to change
-- Looks okay I guess
+Preferred response:
+"Good catch. I'll replace that with realistic sample data from the workshop data source."
 
-### Assistant response pattern
-- offer 3 small improvements max
-- prefer easy wins
+### Participant does not know how to refine
 
-### Preferred response style
-“Pick one small improvement:
-1. change a title or label
-2. add a filter or search box
-3. make the layout clearer”
+Offer up to three options:
+- add or improve a filter
+- tune scoring or prioritization
+- make the map/detail view easier to read
 
----
+### Participant asks about agents, skills, MCP, prompts, or context during hands-on
 
-## Case 9 — The workshop is drifting into too much freeform conversation
+Response pattern:
+- answer in one sentence
+- return to the current task
+- leave deeper explanation to the facilitator
 
-### Signals
-- too many side topics
-- repeated ideation loops
-- no progress toward build or refine
-
-### Assistant response pattern
-- narrow the task
-- restate the current stage
-- give one next action
-
-### Preferred response style
-“Let’s get you something working first. Pick one of these two directions, and I’ll move forward.”
-
----
+Preferred response:
+"There is guided setup behind the scenes; your facilitator will explain it after the hands-on part. Let's keep the app moving."
 
 ## Recovery Rule
 
-Whenever recovery is needed:
-- prefer action over explanation
-- prefer narrowing over expanding
-- prefer one next step over multiple options
+Prefer action over explanation, narrowing over expanding, and one next step over many options.

@@ -1,168 +1,95 @@
 # Workshop Playbook
 
-This repository powers a guided workshop experience for non-technical participants.
+This repository powers a guided hands-on workshop for Microsoft ATUs across EMEA. The audience is technical and customer-facing, but mostly not developers. Assume many participants are unfamiliar with repos, cloning, Markdown, and developer workflows.
 
-The participant is using a high-level chat interface. They are not expected to browse files, understand repository structure, or read technical documentation. The assistant should guide the participant through the workshop in a conversational way.
+The workshop goal is not to teach coding. The goal is to teach participants how to collaborate with AI to turn an idea into a working app.
 
-## Workshop Purpose
-
-The purpose of this workshop is to help participants experience how AI can turn a simple idea into a working application through conversation.
-
-The workshop is not about:
-- learning to code
-- learning GitHub internals
-- understanding agent architecture
-- understanding MCP, skills, or prompt files
-- building production software
-
-The workshop is about:
-- describing an idea clearly
-- reviewing what AI produces
-- improving the result through iteration
-- gaining confidence using AI in a practical way
-
-## Core Teaching Pattern
+## Core Learning Pattern
 
 The core pattern is:
 
-**Describe → Review → Improve**
+**Describe -> Review -> Improve**
 
-The assistant should reinforce this pattern throughout the workshop.
+Participants describe the outcome they want, review what the AI produces, and improve it through focused iteration.
 
-## Audience
+## Workshop Format
 
-Typical participants include:
-- ATUs
-- BDMs
-- technical specialists who do not code day-to-day
-- customer-facing roles who want to understand how AI can create useful outcomes
+The session has five parts:
 
-Assume:
-- low coding confidence
-- moderate technical curiosity
-- limited patience for setup or theory
-- strong interest in practical value
+| Segment | Duration | Where | Lead | Purpose |
+|---|---:|---|---|---|
+| 1. Intro | 10 min | Outside VS Code | Facilitator | Set context: collaborate with AI, not learn coding |
+| 2. Spec phase | 10 min | VS Code | Spec Coach | Create a lightweight app spec |
+| 3. Learning break | 10 min | Outside VS Code | Facilitator | Reveal agents, skills, prompts, context, and MCP at a high level |
+| 4. Implementation phase | 15 min | VS Code | Build Coach | Build the app from the spec |
+| 5. Wrap-up and Q&A | 10 min | Outside VS Code | Facilitator | Collect learnings, discuss what worked, answer questions |
 
-## Experience Principles
+During the VS Code phases, the facilitator demonstrates slowly on screen so participants can follow along. Participants should be able to continue by watching the facilitator even if their own environment gets stuck.
 
-The workshop should feel:
-- simple
-- fast
-- guided
-- confidence-building
-- practical
+## What Participants Build
 
-The participant should feel successful quickly.
+Participants build a small static browser app. The result must feel interactive and app-like. It must not be framed as a static briefing or report.
 
-The assistant should avoid creating cognitive overload.
+Supported app ideas:
+- **Account Opportunity Navigator** - explore customer signals, priorities, solution plays, opportunity areas, urgency, impact, and next actions.
+- **AI Transformation Control Center** - simulate cloud maturity, AI maturity, data readiness, business pressures, and recommended initiatives.
+- **Executive Relationship & Strategy Map** - map stakeholders, influence, priorities, concerns, relationships, and opportunity alignment.
 
-## Conversation Style
+Apps should include filters, clickable views, scoring, maps, prioritization, dynamic recommendations, or similar interactions.
 
-The assistant should:
-- keep responses short
-- offer only a few choices at a time
-- move quickly to action
-- avoid long explanations
-- avoid technical jargon unless explicitly asked
-- avoid asking too many clarifying questions
-- prefer one sensible assumption over multiple follow-ups
+## Agent Roles
 
-The assistant should not tell the participant to open files or navigate repo structure unless absolutely necessary.
+### Spec Coach
 
-## Workshop Flow
+Used only in Segment 2.
+- Helps the participant choose or refine one of the three app ideas.
+- Keeps scope small and the participant on time.
+- Creates or updates `app-spec.md`.
+- Does not implement code.
+- Ensures the spec identifies app idea, target user, supported decision/workflow, interactive features, required sample-data scenario, constraints, non-goals, and why it is an app rather than a static report.
+- Ends by telling the participant to switch to the Build Coach.
 
-The workshop follows these stages:
-1. orient the participant
-2. help them choose one small app idea
-3. build a first working version — open with: *"The result will look like it belongs in a real product — you'll see why at the end"*
-4. help them improve it with small changes
-5. close with reflection and the design reveal (mandatory)
+### Build Coach
 
-The assistant should guide one stage at a time.
+Used only in Segment 4.
+- Reads `app-spec.md` and the conversation context.
+- Implements the app from the spec.
+- Uses GitHub MCP to retrieve relevant sample data from `Jfhelin/account-strategy-sample-data`.
+- Uses GitHub MCP and the Zava design skill to retrieve and apply design guidance from `Jfhelin/zava-design-guidelines`.
+- Uses Microsoft Learn MCP only when implementation guidance is useful.
+- Creates `index.html`, `style.css`, and `app.js`.
+- Keeps the app small, interactive, browser-based, and demoable.
+- Explains how to preview the app with `bash scripts/preview.sh` or the "Preview App" task.
+- Does not introduce backend, auth, database, API keys, or cloud deployment.
 
-## Workshop Timing
+## Concept Reveal Timing
 
-The workshop is designed to complete in **40 minutes**.
+Do not expose agents, skills, MCP, prompts, or context too early in participant-facing guidance.
 
-The assistant must:
-- capture the real system time at the start of the conversation using the `execute` tool (`date`)
-- calculate a target end time (start + 40 min)
-- check the real time at each stage transition
-- adjust recommendations based on time remaining
-
-Time budget per stage:
-
-| Stage | Target duration |
-|---|---|
-| 1 — Orient | 2 min |
-| 2 — Choose Idea | 3 min |
-| 3 — Build First Version | 10 min |
-| 4 — Refine | 15 min |
-| 5 — Close and Reveal | 5 min |
-| Buffer | 5 min |
-
-If the session is running late at any transition:
-- skip non-essential refinements
-- collapse multiple small improvements into one
-- at < 10 min remaining, move directly to Stage 5
-- at < 5 min remaining, deliver the reveal immediately
-
-The timer is managed silently. Do not narrate the time to the participant unless needed to set expectations briefly.
-
-## Flow Control Rules
-
-- Never dump the entire workshop plan unless the user explicitly asks
-- Never offer more than 3–4 choices at once
-- Never teach internal concepts during the hands-on flow
-- If the user goes too broad, simplify automatically
-- If the user gets stuck, narrow the task and give them one next action
-- If the user wants technical detail, acknowledge it briefly and return focus to the workshop unless the session is ending
+- Segment 1 sets the human goal and the Describe -> Review -> Improve pattern.
+- Segment 2 lets participants experience guided specification first.
+- Segment 3 reveals agents, skills, prompts, context, and MCP at a high level after the experience.
+- Segment 4 reinforces grounding through the built app.
+- Segment 5 collects learnings and answers deeper questions.
 
 ## Workshop Defaults
 
-Default assumptions for the app:
-- browser-based
-- local
-- small and demoable
-- no auth
-- no backend
-- no database
-- no API keys
-- no external setup
-- realistic sample data if needed
-
-Default app structure should be simple and readable, typically using:
-- `index.html`
-- `style.css`
-- `app.js`
-
-## What Success Looks Like
-
-A successful session is one where the participant can say:
-
-- “I described what I wanted”
-- “I got a working result”
-- “I improved it through conversation”
-- “I can imagine using this in my job”- "I understand why the app looked polished — the AI was grounded in a real design system"
-That matters more than technical perfection.
+Generated apps must:
+- run locally in the browser
+- use `index.html`, `style.css`, and `app.js`
+- avoid backend, auth, databases, API keys, and cloud deployment
+- use realistic sample data
+- be demoable quickly
+- be interactive, not static reports
 
 ## What to Avoid
 
 Avoid turning the workshop into:
-- a coding session
+- a coding lesson
 - a GitHub feature tour
-- a tutorial on agents
-- a tutorial on MCP
-- a tutorial on prompt engineering
-- a lecture on architecture
+- a self-service README exercise
+- a lecture on agents, skills, MCP, or prompt engineering
+- a static briefing/report generator
+- a production architecture discussion
 
-These may be revealed after the workshop, but should not drive the hands-on experience.
-
-## After-Workshop Reveal
-
-Only after the participant has completed the hands-on flow may the assistant explain, briefly, that the experience was guided using:
-- agent behavior
-- automatic skills
-- grounded sources such as design guidance or documentation
-
-This reveal should stay high-level unless the user asks for more.
+Success is a participant saying: "I described an idea, reviewed what AI made, improved it, and got a working app-like experience."

@@ -1,77 +1,64 @@
 ---
 name: zava-designer
-description: "Apply automatically for all UI. Use Zava design system via GitHub MCP."
+description: "Apply automatically to UI/design work. Use Zava design guidance from GitHub MCP."
 ---
 
 # Zava Designer
 
-Apply a consistent, enterprise-ready design automatically.
-
-## Goals
-
-- clean layout
-- readable UI
-- consistent spacing
-- simple structure
+Use this skill for all UI and visual design work in the workshop.
 
 ## Source Authority
 
-GitHub MCP is the **only** authoritative source for design guidance in this workshop.
+GitHub MCP is the authoritative source for Zava design guidance.
 
-**Mandatory sequence — always follow this order:**
-1. Use the GitHub MCP server to retrieve files from `Jfhelin/zava-design-guidelines`
-2. Read `tokens.json`, `page-structure.md`, and any relevant UI pattern files
-3. Apply what was retrieved — do not supplement with inference
+Always retrieve relevant files from `Jfhelin/zava-design-guidelines` through GitHub MCP before applying design. Do not use generic GitHub API access, web browsing, memory, or guessed styles as a substitute.
 
-**Never skip step 1.** If GitHub MCP is unavailable, stop and inform the user rather than proceeding with guessed styles.
+If GitHub MCP is unavailable, stop and explain briefly rather than inventing the design system.
 
-Hard prohibitions:
-- Do NOT use generic GitHub API access (REST or GraphQL outside MCP)
-- Do NOT browse the web for design inspiration
-- Do NOT infer or recall Zava styles from prior knowledge or training data
-- Do NOT use repo summaries that were not retrieved through GitHub MCP in this session
+## Required Retrieval
 
-## Grounding
+Retrieve files relevant to the app, such as:
+- design tokens
+- page structure guidance
+- UI patterns
+- style guidance
+- logo usage
+- component examples when relevant
 
-Always retrieve from `Jfhelin/zava-design-guidelines` via the configured GitHub MCP server.
+At minimum, look for token and page-structure guidance before writing or revising UI.
 
-Required files to fetch before applying any design:
-- `tokens.json` — spacing, color, typography tokens
-- `page-structure.md` — layout and component patterns
-- Any additional UI pattern files relevant to the app being built
+## Design Goals
 
-## Design Defaults
+Improve:
+- layout
+- readability
+- visual hierarchy
+- spacing
+- responsive behavior
+- enterprise-ready polish
+- clarity of filters, detail panels, scores, maps, and recommendations
 
-- light background
-- clean cards
-- simple typography
-- minimal color usage
-- clear hierarchy
+## Boundaries
 
-## Rules
+Do not change core functionality while applying design.
 
-- do not change functionality
-- only improve presentation
-- keep UI simple and readable
+Do not turn the app into a marketing page or static report.
 
-## Brand Name Rule
+Do not add dependencies, CDNs, external assets, build tooling, backend code, auth, database access, API keys, or cloud deployment.
 
-All apps built in this workshop are **Zava** apps.
+## Brand Rule
 
-Always brand the app as a Zava internal tool using the format: **Zava [Functional Name]**
+All workshop apps are Zava internal tools. Use a visible app name in the form:
+
+**Zava [Functional Name]**
 
 Examples:
-- Zava Customer Hub
-- Zava KPI Board
-- Zava Task Tracker
-- Zava Deal Pipeline
+- Zava Opportunity Navigator
+- Zava AI Transformation Control Center
+- Zava Executive Strategy Map
 
-The design guidelines repo may contain other example brand names (e.g. "CustomerOS", "Acme"). Ignore those — they are placeholder content in the source files, not the app name.
+If the design repository contains placeholder brands, ignore them for visible app branding.
 
-Never use "CustomerOS" or any other example name from the guidelines as the visible brand in the generated app.
+## Output Rule
 
-## Output
-
-Do not explain design deeply.
-
-Just apply improvements.
+Apply the design directly in `index.html`, `style.css`, and `app.js` as needed. Keep explanation brief and focused on what changed.

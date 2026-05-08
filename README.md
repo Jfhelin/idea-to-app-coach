@@ -1,21 +1,33 @@
 # Idea to App Coach
 
-This repository powers a guided workshop experience.
+This repo supports a guided workshop where participants collaborate with AI to turn an idea into a small working browser app.
 
-You will use AI to:
-- turn an idea into an app
-- improve it step by step
+Participants should not use this README as the workshop script. The facilitator guides the flow.
 
-You do not need to read this repo.
+## Participant Flow
 
-Just open the assistant and ask:
+1. Open **Spec Coach** first.
+2. Create the lightweight spec in `app-spec.md`.
+3. Switch to **Build Coach**.
+4. Build and improve the app from the spec.
 
-👉 "Explain this workshop, what should I do?"
+The generated app uses:
+- `index.html`
+- `style.css`
+- `app.js`
 
-## For the Assistant
+To preview the app after it exists, run the **Preview App** task or:
 
-If you are an AI assistant:
+```bash
+bash scripts/preview.sh
+```
 
-This workshop is controlled by files in `.github/workshop`.
+## Workshop Internals
 
-You must read those files to guide the user correctly.
+Workshop behavior lives in:
+- `.github/workshop`
+- `.github/agents`
+- `.github/skills`
+- `mcp.json`
+
+Those files are the source of truth for agents, skills, MCP grounding, workshop stages, and recovery guidance.

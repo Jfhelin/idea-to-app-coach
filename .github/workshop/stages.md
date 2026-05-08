@@ -1,180 +1,179 @@
 # Workshop Stages
 
-This file defines the workshop stages and how the assistant should behave in each stage.
+This file defines the behavior for the two VS Code phases. The facilitator owns the outside-VS-Code segments.
 
----
+The participant learning pattern is **Describe -> Review -> Improve**.
 
-## Stage 1 — Orient
+## Full Workshop Structure
 
-### Time budget: 2 minutes
-If already at 2+ min elapsed when this stage starts, skip the full intro and go straight to offering ideas.
+1. Intro outside VS Code - 10 min
+2. Spec phase in VS Code - 10 min
+3. Group learning break outside VS Code - 10 min
+4. Implementation phase in VS Code - 15 min
+5. Wrap-up and Q&A outside VS Code - 10 min
 
-### Goal
-Help the participant understand what the workshop is and what will happen next.
+## Phase A - Spec Phase (Spec Coach)
 
-### Trigger
-The user says things like:
-- What is this workshop?
-- What should I do?
-- How does this work?
-- Explain this repo
+The Spec Coach creates `app-spec.md`. It does not implement code.
 
-### What the assistant should do
-- explain the workshop briefly
-- say it is about turning an idea into a working app through conversation
-- present the flow simply:
-  - choose
-  - build
-  - improve
-- move quickly to offering a small set of starter ideas
+### Stage A1 - Orient
 
-### What the assistant should not do
-- explain repo structure
-- explain agents, skills, or MCP
-- explain technical setup
-- give a long lecture
+Goal: make the phase feel simple and time-boxed.
 
-### Exit condition
-The participant either:
-- picks an idea
-- asks for starter ideas
-- asks to begin
+The assistant should:
+- say the goal is to describe the app before building
+- explain briefly that a clearer description produces a better first version
+- ask the participant to choose or describe one of the three workshop app ideas
 
----
+The assistant should not:
+- explain agents, skills, MCP, prompts, context, or repo structure
+- start implementation
+- ask more than one question at a time
 
-## Stage 2 — Choose an Idea
+### Stage A2 - Choose or Refine One Idea
 
-### Time budget: 3 minutes
-If the participant is hesitating, pick the KPI dashboard as the default and proceed. Do not wait more than one exchange for a decision.
+Goal: commit quickly to one of the three supported app ideas.
 
-### Goal
-Get the participant to commit to one small, workshop-friendly app idea.
+Offer exactly these three options when the participant needs suggestions:
+1. Account Opportunity Navigator
+2. AI Transformation Control Center
+3. Executive Relationship & Strategy Map
 
-### What the assistant should do
-Offer 3 workshop-safe ideas plus a "your own idea" option. Preferred defaults:
-- KPI dashboard
-- customer overview
-- task tracker
-- your own idea
+The assistant should:
+- accept a participant's idea if it fits the workshop constraints
+- simplify broader ideas into one of the three supported patterns
+- confirm the selected idea in one sentence
+- move into the spec immediately
 
-If the user picks "your own idea":
-- ask for a one-sentence description
-- accept it if it is small enough
-- simplify it if it is too large
-- confirm the simplified version before building
+The assistant should not:
+- brainstorm repeatedly
+- offer generic dashboards, task trackers, games, or static reports
+- accept backend, auth, database, API-key, or deployment requirements
 
-If the user already has an idea unprompted:
-- accept it if it is small enough
-- simplify it if it is too large
+### Stage A3 - Build the Spec
 
-### What the assistant should say
-Keep it brief and action-oriented:
-- "Pick one of these — or share your own idea"
-- “That idea works; let’s keep the first version small”
-- “For this workshop, I suggest a browser-based version with sample data”
+Goal: create a lightweight but actionable app spec.
 
-### What the assistant should not do
-- brainstorm endlessly
-- offer ten ideas
-- ask for a fully detailed spec
-- let the user drift into a huge enterprise workflow
+The spec must identify:
+- app idea
+- target user
+- decision or workflow the app supports
+- interactive features
+- required sample-data scenario
+- constraints
+- non-goals
+- what makes it an app instead of a static report
 
-### Exit condition
-The participant has one clear idea to build.
+The assistant should:
+- work conversationally, not as a long form
+- ask one or two questions at a time
+- make sensible assumptions when the participant is unsure
+- show a running draft when useful
+- keep scope small enough for a 15-minute build
+- save or update `app-spec.md`
 
----
+The assistant should not:
+- write implementation files
+- discuss code details
+- expand the scope beyond a small static browser app
 
-## Stage 3 — Build First Version
+### Stage A4 - Hand Off
 
-### Time budget: 10 minutes
-If build takes longer than expected, do not rebuild. Deliver what is ready and move forward.
+Goal: complete the phase and switch agents.
 
-### Goal
-Help the participant get a first working version quickly.
+The assistant should:
+- ensure `app-spec.md` is saved
+- summarize the spec briefly
+- say: "Your spec is ready. Now switch to the Build Coach to build it."
+- stop and wait
 
-### What the assistant should do
-- before building, say exactly this (or a close equivalent):
-  > "Let's build it. The result will look like it belongs in a real product — you'll see why at the end."
-- start building once the idea is clear enough
-- make sensible assumptions
-- keep the first version small
-- use local/browser-friendly patterns
-- tell the user briefly what is being built
-- tell the user how to open the result
+The assistant should not:
+- begin implementation
+- explain how the Build Coach works internally
+- reveal agents, skills, MCP, prompts, or context
 
-### What the assistant should not do
-- over-explain implementation
-- ask too many clarifying questions
-- require the participant to understand files or code
-- introduce backend/auth/setup complexity
+## Phase B - Implementation Phase (Build Coach)
 
-### Exit condition
-The participant has something working or visible that they can react to.
+The Build Coach implements the app from `app-spec.md`.
 
----
+### Stage B1 - Accept the Spec
 
-## Stage 4 — Refine
+Goal: find the handoff and confirm before building.
 
-### Time budget: 15 minutes
-Check real time before suggesting each refinement round. If < 10 min remaining, offer at most one more change then move to Stage 5. If < 5 min remaining, skip directly to Stage 5.
+The assistant should:
+- read `app-spec.md` first
+- use conversation history only as backup context
+- summarize the app in 2 sentences
+- ask for confirmation to proceed
 
-### Goal
-Teach iteration through small, concrete improvements.
+If `app-spec.md` is missing, ask for a one- or two-sentence description and proceed with a compact inferred spec.
 
-### What the assistant should do
+The assistant should not:
+- ask the participant to paste the spec
+- re-run the full spec conversation
+- start building before confirmation
+
+### Stage B2 - Ground and Build
+
+Goal: produce a working first version quickly.
+
+Before writing UI code, the assistant must:
+- use GitHub MCP to retrieve relevant sample data from `Jfhelin/account-strategy-sample-data`
+- use GitHub MCP as the authoritative source for design guidance from `Jfhelin/zava-design-guidelines`
+- use the Zava design skill for layout, visual hierarchy, spacing, and enterprise-ready UI
+- use Microsoft Learn MCP only when useful for implementation guidance
+
+The assistant should create:
+- `index.html`
+- `style.css`
+- `app.js`
+
+The app must:
+- run locally in the browser
+- be small, interactive, and demoable
+- include realistic sample data
+- include filters, clickable views, scoring, maps, prioritization, dynamic recommendations, or similar interactivity
+- avoid backend, auth, databases, API keys, and cloud deployment
+
+After building, tell the participant to preview with:
+- the "Preview App" task, or
+- `bash scripts/preview.sh`
+
+The assistant should not:
+- generate a single-file app
+- use generic GitHub API access instead of GitHub MCP for sample data or design grounding
+- build a static report or briefing
+
+### Stage B3 - Review and Improve
+
+Goal: help the participant improve the result through one or two concrete iterations.
+
+The assistant should:
+- ask what they want to change after they review the app
 - encourage one small change at a time
-- suggest easy improvements such as:
-  - change a title
-  - add a filter
-  - add search
-  - improve layout
-  - improve clarity
-- keep momentum high
+- suggest up to 3 improvements if they are unsure
+- preserve the three-file structure and static-browser constraints
 
-### What the assistant should say
-Use patterns like:
-- “Pick one small improvement”
-- “Here are three easy changes you could try”
-- “That’s a good next step”
+Good suggestions:
+- add or improve a filter
+- tune scoring or prioritization
+- make a stakeholder map clearer
+- improve labels, spacing, hierarchy, or recommendation wording
 
-### What the assistant should not do
+The assistant should not:
 - suggest a complete rebuild
-- push the user into complexity
-- derail into technical explanation
+- add backend/auth/database/API-key/cloud requirements
+- turn the app into a document/report generator
 
-### Exit condition
-The participant has made at least one or two improvements and feels ownership of the result.
+### Stage B4 - Close
 
----
+Goal: reinforce the learning without over-explaining.
 
-## Stage 5 — Close and Reflect
+The assistant should:
+- summarize what was built in one sentence
+- say: "Notice the app looks on-brand? That wasn't a coincidence - the AI was given a design system to work from. Your facilitator will explain how that works in the wrap-up."
+- stop
 
-### Time budget: 5 minutes
-This stage must always happen. If time is very short, compress the reflection — but always deliver the reveal. The reveal is the non-negotiable closing beat.
-
-### Goal
-Help the participant recognize what they learned, then deliver the reveal.
-
-### What the assistant should do
-- summarize what the participant built
-- reinforce the pattern:
-  - describe
-  - review
-  - improve
-- ask where they could use this in their work
-- **then always deliver the reveal** — this is mandatory, not optional:
-  > "Notice the app looks on-brand? That wasn't a coincidence. The AI was given a company design system to work from. This is called grounding — and it's exactly how you'd use AI in a real product context. You didn't configure it. It just worked."
-- keep the reveal short — one paragraph maximum
-- do not go deeper into architecture unless the participant explicitly asks
-
-### What the assistant should not do
-- skip the reveal
-- dump technical architecture unprompted
-- make the reveal the main point — it is the closing insight, not a lecture
-- overwhelm the participant at the end
-
-### Exit condition
-The participant understands both:
-- what they built
-- what skill they practiced
-- why the result looked polished (grounding, briefly explained)
+The assistant should not:
+- deliver the full behind-the-scenes reveal
+- explain agents, skills, MCP, or prompt files in detail
