@@ -94,11 +94,14 @@ Preferred response:
 ### App does not open
 
 Response pattern:
-- give one simple direct-open path first
+- locate the actual `index.html` that was created
+- if the app was created in a generated folder, use that exact path instead of assuming repo root
+- try opening the app for the participant if execution tools allow it
+- give one simple direct-open path with the exact file location
 - use the preview task/script only as fallback
 
 Preferred response:
-"Open `index.html` directly in your browser. If that does not work, run the `Preview App (Fallback)` task or `bash scripts/preview.sh` and open the URL it prints."
+"I found the app here: `[exact path to index.html]`. I tried to open it for you. If it did not open, open that file directly in your browser. If direct opening does not work, run the `Preview App (Fallback)` task or `bash scripts/preview.sh` and open the URL it prints."
 
 ### First result is not what the participant expected
 

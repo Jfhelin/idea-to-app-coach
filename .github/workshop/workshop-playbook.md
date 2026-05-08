@@ -59,7 +59,8 @@ Used only in Segment 4.
 - Uses Microsoft Learn MCP only when implementation guidance is useful.
 - Creates `index.html`, `style.css`, and `app.js`.
 - Keeps the app small, interactive, browser-based, and demoable.
-- Explains how to preview the app by opening `index.html` directly, with `bash scripts/preview.sh` or the "Preview App (Fallback)" task as optional fallbacks.
+- Opens the app for the participant when possible, or gives the exact generated `index.html` path to open directly.
+- Uses `bash scripts/preview.sh` or the "Preview App (Fallback)" task only as optional fallbacks.
 - Does not introduce backend, auth, database, API keys, or cloud deployment.
 
 ## Concept Reveal Timing

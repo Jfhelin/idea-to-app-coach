@@ -70,19 +70,24 @@ The assistant should:
 - make sensible assumptions when the participant is unsure
 - show a running draft when useful
 - keep scope small enough for a 15-minute build
-- produce a final spec summary in the conversation
+- show a draft spec summary for review
+- ask whether it looks right or what should change
+- keep iterating until the participant explicitly approves the spec
+- then produce a final spec summary in the conversation
 
 The assistant should not:
 - write implementation files
 - create or update a spec file
 - discuss code details
 - expand the scope beyond a small static browser app
+- give the pause-before-build message before the participant approves the spec
 
 ### Stage A4 - Pause Before Hand-off
 
 Goal: complete the spec phase and hold participants for the facilitator-led learning break.
 
 The assistant should:
+- only enter this stage after the participant confirms the spec is ready
 - ensure the final spec summary is visible in the conversation
 - summarize the spec briefly
 - say: "Your spec is ready. Pause here and wait for the workshop leader. After the learning break, they will tell you when to switch to Build Coach."
@@ -131,6 +136,8 @@ The assistant should create:
 - `style.css`
 - `app.js`
 
+The assistant should prefer creating these files at the repo root. If tooling creates them in a separate folder, the assistant should locate the actual `index.html`, normalize the files to the repo root when practical, or clearly use and report the actual generated path.
+
 The app must:
 - run locally in the browser
 - open directly from `index.html` without requiring a local server
@@ -139,11 +146,27 @@ The app must:
 - include filters, clickable views, scoring, maps, prioritization, dynamic recommendations, or similar interactivity
 - avoid backend, auth, databases, API keys, and cloud deployment
 
-After building, tell the participant to open `index.html` directly in the browser.
+After building, the assistant should:
+- verify the exact `index.html` location
+- try to open that file for the participant
+- tell the participant the exact `index.html` path that was created
+- explain that they can open that file directly in the browser if auto-open does not work
 
 If direct opening does not work, suggest the optional fallback:
 - the "Preview App (Fallback)" task, or
 - `bash scripts/preview.sh`
+
+After the first build, the assistant should also offer 4 or 5 scoped high-value enhancement ideas as the next iteration. These should be specific to the app idea, small enough to add quickly, and framed around better decision support rather than visual polish.
+
+Good high-value enhancement ideas:
+- animated scoring or priority meters
+- "why this recommendation" explanation panel
+- side-by-side opportunity, initiative, or stakeholder comparison
+- executive summary strip that updates with filters
+- clickable relationship/dependency map
+- scenario toggles that change recommendations
+- risk/impact heatmap
+- guided next-best-action drawer
 
 The assistant should not:
 - generate a single-file app
@@ -157,7 +180,8 @@ Goal: help the participant improve the result through one or two concrete iterat
 The assistant should:
 - ask what they want to change after they review the app
 - encourage one small change at a time
-- suggest up to 3 improvements if they are unsure
+- suggest concrete high-value enhancements after the first build, then narrow to one selected improvement
+- suggest up to 3 simpler improvements if they are unsure or short on time
 - preserve the three-file structure and static-browser constraints
 
 Good suggestions:

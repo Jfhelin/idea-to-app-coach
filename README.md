@@ -17,7 +17,7 @@ The generated app uses:
 - `style.css`
 - `app.js`
 
-To preview the app after it exists, open `index.html` directly in your browser.
+The Build Coach will try to open the app for you after it builds version 1. If it cannot open the browser, it will tell you the exact `index.html` path to open directly.
 
 If direct opening does not work, run the optional **Preview App (Fallback)** task or:
 

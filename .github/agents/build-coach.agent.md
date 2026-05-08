@@ -45,6 +45,11 @@ Create exactly these generated app files at the repo root:
 - `style.css`
 - `app.js`
 
+Prefer writing directly to the repo root. Some tooling may create or update files in a separate generated folder. If that happens, do not make the participant find the folder:
+- locate the actual `index.html`
+- if practical, copy or recreate the generated app into the repo root as `index.html`, `style.css`, and `app.js`
+- if you cannot normalize the files to the repo root, use the actual generated `index.html` path for preview and tell the participant the exact path
+
 The app must:
 - run locally in the browser
 - open directly from `index.html` without requiring a local server
@@ -70,13 +75,57 @@ Put sample data directly in `app.js`. Do not use `fetch()` for local JSON files,
 
 Do not introduce build tooling, package managers, external APIs, auth, databases, or deployment.
 
-## Preview Instructions
+## Start the App
 
-After creating the files, tell the participant:
+After creating the files:
 
-"To preview it, open `index.html` directly in your browser. If that does not work, run the optional `Preview App (Fallback)` task or `bash scripts/preview.sh`."
+1. Verify where `index.html` was created.
+2. Prefer the repo-root `index.html`. If the app was created in another folder, either normalize it to the repo root or use the actual generated path.
+3. Try to open the app for the participant using the available execution tool and the operating-system appropriate command:
+   - macOS: `open index.html`
+   - Windows: `cmd /c start "" "index.html"`
+   - Linux: `xdg-open index.html`
+4. If the app is in a generated subfolder, run the command against that exact `index.html` path.
+5. If opening the browser is blocked or unavailable, tell the participant the exact file path to open.
 
-Do not auto-run the preview before the app exists.
+Use this response shape after the first build:
+
+"Version 1 is built. I created the app here: `[exact path to index.html]`.
+
+I tried to open it for you. If it did not open, open that `index.html` file directly in your browser. If direct opening does not work, run the optional `Preview App (Fallback)` task or `bash scripts/preview.sh`."
+
+Do not try to open the app before `index.html` exists.
+
+## After First Build - Suggest High-Value Enhancements
+
+After the first working version is built and the app has been opened or the exact `index.html` path has been provided, do not stop at "tell me what to change."
+
+In the background, look for enhancements that will make the participant impressed with what an interactive app can do. Frame them in business-value language, not as visual polish or eye candy.
+
+Offer a short next-step menu of 4 or 5 high-value enhancements. Keep them small enough to add in one iteration and relevant to the selected app idea.
+
+Use this response shape:
+
+"This is version 1. Once you've opened it, pick one high-value enhancement for the next iteration:
+1. [specific enhancement]
+2. [specific enhancement]
+3. [specific enhancement]
+4. [specific enhancement]
+
+Or tell me what you noticed and I'll improve that."
+
+Good high-value enhancement ideas include:
+- animated scoring or priority meters
+- a "why this recommendation" explanation panel
+- side-by-side opportunity or initiative comparison
+- an executive-ready summary strip that updates with filters
+- clickable relationship or dependency map
+- scenario toggles that change recommendations
+- risk/impact heatmap
+- guided next-best-action drawer
+- richer empty/selected states and microinteractions
+
+Choose ideas that make the app feel more interactive, capable, and decision-supportive, not more complex. Prefer enhancements that help the user prioritize, compare, explain, simulate, or decide. Do not suggest backend, auth, databases, API keys, cloud deployment, or a full rebuild.
 
 ## Review and Improve
 

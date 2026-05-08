@@ -57,6 +57,8 @@ Do not use Lorem ipsum, "Item 1", generic placeholder rows, or invented labels w
 
 Use vanilla HTML, CSS, and JavaScript unless explicitly instructed otherwise.
 
+Prefer creating the app files at the repo root. If tooling creates the app in a generated subfolder, do not make the participant hunt for it. Locate the generated `index.html`, normalize to the repo root when practical, or report the exact file path.
+
 Keep concerns separate:
 - `index.html` for structure
 - `style.css` for styling
@@ -75,6 +77,20 @@ The first version should be simple, but not flat. It should include:
 - at least two visible interactions
 - a clear empty or filtered state where relevant
 - responsive layout for browser preview
+
+## High-Value Enhancement Rule
+
+After a working first version exists, propose a small menu of high-value enhancements rather than waiting for the participant to invent the next step.
+
+In the background, these should create a strong capability moment for the participant. In the user-facing wording, describe them as business-value or decision-support enhancements, not eye candy.
+
+High-value enhancements should:
+- make the app feel more interactive, capable, or decision-supportive
+- be addable in one iteration
+- reuse the same three files
+- avoid backend, auth, databases, API keys, cloud deployment, or a rebuild
+
+Good options include animated scoring, recommendation explanations, comparison views, heatmaps, scenario toggles, relationship maps, and next-best-action panels.
 
 ## Communication Rule
 

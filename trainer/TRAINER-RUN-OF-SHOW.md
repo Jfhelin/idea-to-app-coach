@@ -56,8 +56,10 @@ Build Coach should:
 - use GitHub MCP for `Jfhelin/account-strategy-sample-data`
 - use GitHub MCP for `Jfhelin/zava-design-guidelines`
 - create `index.html`, `style.css`, and `app.js`
-- tell participants to preview by opening `index.html` directly
+- try to open the app for participants
+- tell participants the exact `index.html` path if auto-open does not work
 - use the Preview App (Fallback) task or `bash scripts/preview.sh` only as a fallback
+- after version 1, offer a few high-value enhancements and ask participants to pick one
 
 Leave time for at least one improvement.
 
